@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+      h2 {text-align: center;}
+        body {
+            background-image:url("https://images.shiksha.com/mediadata/images/1520420083phpyKP3vR.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+}
+
+        form {
+            background-color: MintCream;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px gray;
+            max-width: 400px;
+            width: 80%;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+.forgot-password-link {
+    color: black; 
+    text-decoration: none;
+    font-size:15px;
+}
+    </style>
+</head>
+<body>
+
+    <form method="POST" action="{{ url_for('login') }}">
+        <h2>LOGIN PAGE</h2>
+        <label for="username">USERNAME:</label>
+        <input type="text" placeholder="username" name="username" required>
+     
+        <label for="password">PASSWORD:</label>
+        <input type="password" placeholder="password" name="password" required>
+        
+        <a href="{{ url_for('forgot_password') }}" class="forgot-password-link">Forgot Password?</a>    <br>
+        <button type="submit">LOGIN</button>
+    </form>
+    
+</body>
+</html>

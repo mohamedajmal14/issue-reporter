@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>water issues</title>
+    <style>
+        body {
+             background-image:url("https://images.shiksha.com/mediadata/images/1520420083phpyKP3vR.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+            font-size:15px;
+            font-family: Arial, sans-serif;
+            background-color: BLACK;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div {
+            
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+        }
+    .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+  
+input[type=text], select {
+  width: 100%;
+  padding: 20px 120px 30px 5px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+#liveFeedSettingSideBar {
+    width: 1px; /* Set the desired width */
+    height: 1px; /* Set the desired height */
+    background-color: transparent;
+}
+input[type=SUBMIT] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}    
+   
+        
+    </style>
+</head>
+<body>
+
+<div>
+    <h2 align="center">WATER ISSUES</h2>
+    <form method="POST" action="{{ url_for('submit_water_issues_form') }}" enctype="multipart/form-data">
+      <h3>What kind of problem?</h3>
+         
+      <label class="container">No flow of water
+        <input type="radio" checked="checked" name="radio" value="No flow of water">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Unpurified or muddy water
+        <input type="radio" name="radio" value="Unpurified or muddy water">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Leakage of pipelines
+        <input type="radio" name="radio" value="Leakage of pipelines">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Others
+        <input type="radio" name="radio" value="Others">
+        <span class="checkmark"></span>
+      </label>
+  
+      <h3>Problem description:</h3>
+      <label for="problem_description"></label>
+      <input type="text" id="problem_description" name="problem_description">
+  
+      <h3>How long does the problem exist?</h3>
+      <label for="duration"></label>
+      <input type="text" id="duration" name="duration">
+  
+      <BR>
+      <label for="myfile">ADD FILE:</label>
+      <input type="file" id="myfile" name="myfile"><br><br>
+      
+      <input type="submit">
+  </form>
+  
+</div>
+
+
+</body>
+</html>
